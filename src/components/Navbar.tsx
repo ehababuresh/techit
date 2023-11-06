@@ -27,7 +27,7 @@ navigate("/")
           <NavLink className="nav-link" to="/Products">Products</NavLink>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">Cart</a>
+          <NavLink className="nav-link" to="/cart">Cart</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link" to="/profile">Profile</NavLink>

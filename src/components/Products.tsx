@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import { getIsAdmin } from "../services/usersService";
 import { Link } from "react-router-dom";
 import { errorMsg, successMsg } from "../services/feedbackservice";
+import { addToUserCart } from "../services/cartsService";
 
 
 interface ProductsProps {}
@@ -56,6 +57,14 @@ const [showSuccessMsg, setShowSuccessMsg] = useState(false);
   }, [isChanged, showSuccessMsg]);
   
 
+  const handleAddToCart = (product: Product) => {
+    product.quantity = 1;
+    addToUserCart(product)
+      .then(() => {
+        successMsg("Product was added to cart");
+      })
+      .catch((err) => errorMsg(err));
+  };
   
 
   return (
@@ -75,7 +84,8 @@ const [showSuccessMsg, setShowSuccessMsg] = useState(false);
                     <p className="card-text">{product.description}</p>
                     <p className="card-text text-success">${product.price.toFixed(2)}</p>
                     <div className="btn-group">
-                      <a href="#" className="btn btn-success">
+                    <a onClick={() => handleAddToCart(product)} className="btn btn-success">
+
                         <span>
                           <i className="fa-solid fa-cart-plus"></i> Add to Cart
                         </span>

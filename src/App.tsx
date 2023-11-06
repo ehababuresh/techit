@@ -9,6 +9,7 @@ import Products from "./components/Products";
 import AddProduct from "./components/AddProduct";
 import EditProudcts from "./components/EditProudct";
 import EditProduct from "./components/EditProudct";
+import Cart from "./components/Cart";
 
 function App() {
     return (
@@ -20,11 +21,13 @@ function App() {
                     <Route path="/register" element={<Register />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/Profile" element={<Profile />} />
+                   
                     <Route path="/products">
                         <Route index element = {<Products/>}/>
                         <Route path="add" element={<AddProduct/>}/>
                         <Route path="edit/:id" element={<EditProduct/>}/>
                         </Route>
+                        <Route path="/Cart" element={<Cart />} />
                 </Routes>
             </Router>
             
