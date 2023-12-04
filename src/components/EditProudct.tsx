@@ -14,6 +14,7 @@ interface EditProductProps {}
 const EditProduct: FunctionComponent<EditProductProps> = () => {
 
     const { id } = useParams();
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     
     const [product, setProduct] = useState({
         name: "",
@@ -25,7 +26,9 @@ const EditProduct: FunctionComponent<EditProductProps> = () => {
 
     useEffect(() => {
         getProduct(id as string)
-            .then(result => setProduct(result.data))
+            .then(result =>
+                 setProduct(result.data))
+                 
             .catch(error => console.log(error));
     }, []);
 

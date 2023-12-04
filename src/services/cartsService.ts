@@ -3,6 +3,7 @@ import { Product } from "../interfaces/product";
 import _, { omit } from "lodash";
 
 const api: string = process.env.REACT_APP_API || "";
+// const api = process.env.REACT_APP_API_URL;
 
 // get user Cart
 export const getUserCart = (): Promise<any> =>
@@ -20,8 +21,8 @@ export const addToUserCart = (product: Product): Promise<any> => {
     });
   };
   
-  // פונקציה למחיקת מוצר מהעגלה לפי ה-ID שלו
+// Function to remove a product from the user cart by its ID
 export const removeFromUserCart = (productId: string): Promise<any> =>
-axios.delete(`${api}carts/${productId}`, {
-    headers: { Authorization: `${sessionStorage.getItem("token")}` }
+  axios.delete(`${api}carts/${productId}`, {
+    headers: { Authorization: `${sessionStorage.getItem("token")}` },
 });
