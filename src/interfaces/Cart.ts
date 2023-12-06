@@ -6,4 +6,5 @@ export interface Cart {
     userId: string;
     products: Product[];
     active: boolean;
+    
 }
