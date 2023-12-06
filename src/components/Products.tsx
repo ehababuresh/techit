@@ -75,7 +75,7 @@ const [showSuccessMsg, setShowSuccessMsg] = useState(false);
         <div className="row gap-4 ms-1">
           {products.length ? (
             products.map((product: Product) => (
-              <div className="card col-md-3 m-1" key={product._id}>
+              <div className="card col-md-3 m-0.1" key={product._id}>
                 <div className="card">
                   <img src={product.image} className="card-img-top" alt="Product" />
                   <div className="card-body">
@@ -116,7 +116,7 @@ const [showSuccessMsg, setShowSuccessMsg] = useState(false);
             <p>No products in store</p>
           )}
           {isAdmin ? (
-            <div className="fixed-bottom text-end mb-4 me-4">
+            <div className="fixed-bottom  mb-4 me-4">
               <Link className="btn btn-sucres rounded-circle btn-lg" to="add">
                 <i className="fas fa-plus"></i> Add Product
               </Link>
