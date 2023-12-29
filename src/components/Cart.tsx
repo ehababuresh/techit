@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getUserCart, removeFromUserCart } from "../services/cartsService";
 import { Product } from "../interfaces/product";
 import Navbar from "./Navbar";
+import './Cart.css'; // Ensure this CSS file is included
 
 const Cart = () => {
   const [cart, setCart] = useState<Product[]>([]);
@@ -16,7 +17,7 @@ const Cart = () => {
           setIsLoading(false);
         })
         .catch((err) => console.log(err));
-    }, 2000); // ההצגה של הלודינג תישאר במשך שלוש שניות
+    }, 1000);
   }, []);
 
   const handleRemoveFromCart = (productId: string) => {
@@ -42,36 +43,42 @@ const Cart = () => {
       ) : (
         <>
           {cart.length > 0 ? (
-            <table className="table table-striped">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Category</th>
-                  <th>Description</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cart.map((product: Product) => (
-                  <tr key={product._id}>
-                    <td>{product.name}</td>
-                    <td>{product.category}</td>
-                    <td>{product.description}</td>
-                    <td>${product.price.toFixed(2)}</td>
-                    <td>{product.quantity}</td>
-                    <td>
-                      <button onClick={() => product._id && handleRemoveFromCart(product._id)}>
-                        Delete
-                      </button>
-                    </td>
+            <div className="cart-container">
+              <table className="table cart-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {cart.map((product: Product) => (
+                    <tr key={product._id}>
+                      <td>{product.name}</td>
+                      <td>{product.category}</td>
+                      <td>{product.description}</td>
+                      <td>${product.price.toFixed(2)}</td>
+                      <td>{product.quantity}</td>
+                      <td>
+                        {product._id && (
+                          <button 
+                           onClick={() => product._id && handleRemoveFromCart(product._id)}
+                            className="btn-delete">
+                            Delete
+                          </button>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           ) : (
-            <p>Your cart is empty.</p>
+            <p className="empty-cart-message">Your cart is empty.</p>
           )}
           {showSuccessMsg && <div className="alert alert-success">Item removed successfully!</div>}
         </>

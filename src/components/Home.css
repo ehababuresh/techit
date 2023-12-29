@@ -1,46 +1,32 @@
+/* Home.css */
+
+/* ... (other styles) */
+
+.image-item {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 60px; /* Increase bottom margin to push text further down */
+}
+
+.home-image {
+  width: 100%;
+  max-width: 300px; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-text {
+  font-family: 'Dancing Script', cursive; 
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  white-space: nowrap; 
+}
 
 
-/* סטיילים כלליים לעמוד הבית */
-.home-container {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .home-title {
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .home-description {
-    font-size: 1.2rem;
-    color: #666;
-    margin-top: 20px;
-  }
-  
-  .image-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .home-image {
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  /* סטיילים לתמונות */
-  .home-image:hover {
-    border-color: #007bff; /* תפעיל עצימת גבורה כאשר המשתמש מעביר את העכבר מעל התמונה */
-    cursor: pointer; /* הפך את העכבר לסמן יד */
-  }
-  
-  /* סטיילים לרקע של הדף */
-  body {
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-  }
-  

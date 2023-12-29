@@ -1,0 +1,29 @@
+/* Navbar.css */
+
+.navbar-custom {
+    background-color: #333; /* Dark background */
+    padding: 10px 15px; /* Adjust padding as needed */
+  }
+  
+  .navbar-brand {
+    color: #f8f9fa !important; /* Light color for brand */
+  }
+  
+  .nav-link {
+    color: #f8f9fa !important; /* Light color for links */
+  }
+  
+  .nav-link:hover {
+    color: #adb5bd !important; /* Lighter color on hover */
+  }
+  
+  .btn-outline-success {
+    margin-right: 10px; /* Spacing for search button */
+  }
+  
+  .btn-outline-primary {
+    margin-left: 10px; /* Spacing for logout button */
+  }
+  
+  /* Additional styling as needed */
+  

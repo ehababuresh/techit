@@ -1,0 +1,20 @@
+/* Products.css */
+
+.product-card {
+    /* Custom styling for product cards */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .row-cols-md-3 > * {
+    /* Ensuring three cards per row on medium and larger screens */
+    flex: 0 0 auto;
+    width: 33.333333%;
+  }
+  
+  /* Additional responsive and aesthetic styling can be added here */
+  
