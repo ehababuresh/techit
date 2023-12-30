@@ -1,6 +1,6 @@
 
 
-Creating a TypeScript-based shoe shopping website would involve several steps and components. I'll outline a high-level structure in English for such a site using React with TypeScript. This will include the primary components and types you would need.
+Creating a TypeScript-based shoe shopping website would involve several steps and components. I'll outline a high-level structure in English for such a site using React with TypeScrip with bootstrap. This will include the primary components and types you would need.
 
 
 client : npm start 
